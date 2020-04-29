@@ -1,6 +1,6 @@
 {
   "name": "prose_array",
-  "version": "1.0.12",
+  "version": "2.0.3",
   "description": "An array Utility. Make writing node easier, prettier and less error prone. Writes and reads more like prose",
   "license": "MIT",
   "main": "index.js",
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "prose_object": "*",
+    "prose_is": "*",
     "prose_isit": "*",
     "prose_string": "*"
   },

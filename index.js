@@ -1,6 +1,7 @@
 /* jshint esversion: 6 */
 // Copyright (c) 2019 Seán D. Murray
 // SEE MIT LICENSE FILE
+const is = require('prose_is');
 const isit = require('prose_isit');
 const object_util = require('prose_object');
 const string_util = require('prose_string');
@@ -31,7 +32,7 @@ exports.chunk = (item, chunkSize) => {
 };
 
 exports.clean = (item) => {
-	if (isit.nil(item)) {
+	if (is.nil(item)) {
 		return item;
 	}
 	const tmp1 = exports.unique(item);
@@ -40,10 +41,10 @@ exports.clean = (item) => {
 };
 
 exports.contains = (item, searchValue) => {
-	if (isit.nil(searchValue)) {
+	if (is.nil(searchValue)) {
 		throw new Error('An defined non-null search value is expected');
 	}
-	if (isit.nil(item)) {
+	if (is.nil(item)) {
 		return false;
 	}
 	if (isit.notArray(item)) {
@@ -132,7 +133,7 @@ exports.flatten = (item) => {
 };
 
 exports.isEmpty = (item) => {
-	if (isit.nil(item)) {
+	if (is.nil(item)) {
 		return true;
 	}
 	if (isit.notArray(item)) {
@@ -149,14 +150,14 @@ exports.notEmpty = (item) => {
 };
 
 exports.removeBlanks = (item) => {
-	if (isit.nil(item)) {
+	if (is.nil(item)) {
 		return item;
 	}
 	if (isit.notArray(item)) {
 		throw new Error('An array type is expected.');
 	}
 	return item.filter((val) => {
-		if (isit.nil(val)) {
+		if (is.nil(val)) {
 			return false;
 		}
 		if (typeof val === TYPEOF_STRING) {
@@ -167,14 +168,14 @@ exports.removeBlanks = (item) => {
 };
 
 exports.shuffle = (item) => {
-	if (isit.nil(item)) {
+	if (is.nil(item)) {
 		return [];
 	}
 	return exports.copy(item).sort(() => Math.random() - 0.5);
 };
 
 exports.unique = (item) => {
-	if (isit.nil(item)) {
+	if (is.nil(item)) {
 		return item;
 	}
 
