@@ -1,4 +1,4 @@
-# Prose/Array
+# prose_array
 
 Copyright (c) 2019 Seán D. Murray
 SEE MIT LICENSE FILE
